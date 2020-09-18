@@ -1,0 +1,255 @@
+<mvc:View
+	controllerName="ZFR_BANCA_TOOL.Controller.ViewPreCol"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:l="sap.ui.layout"
+	xmlns="sap.ui.table"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:u="sap.ui.unified"
+	xmlns:c="sap.ui.core"
+	xmlns:m="sap.m"
+	xmlns:f="sap.ui.layout.form" >
+	
+	
+				<Table
+				selectionMode="MultiToggle"
+				fixedColumnCount = "2"
+				enableCellFilter="true"
+				id="precol"
+
+				visibleRowCount="8"
+				ariaLabelledBy="title"
+				cellClick="onCell">
+				<columns>
+					<Column
+						id="name"
+						width="11rem"
+						filterProperty="POLICY_NUM" 
+						sortProperty="POLICY_NUM">
+						<m:Label text="{i18n>POLICY_NUM}" />
+						<template>
+							<m:Text text="{PRE_COL>POLICY_NUM}" wrapping="false" />
+						</template>
+					</Column>
+					<Column
+						
+						width="9rem"
+						filterProperty="HOLDER_NAME" 
+						sortProperty="HOLDER_NAME">
+						<m:Label text="{i18n>HOLDER_NAME}" />
+						<template>
+							<m:Text text="{PRE_COL>HOLDER_NAME}" wrapping="false" />
+						</template>
+					</Column>
+					<Column
+						
+						width="11rem"
+						filterProperty="INSURED_NAME" 
+						sortProperty="INSURED_NAME">
+						<m:Label text="{i18n>INSURED_NAME}" />
+						<template>
+							<m:Text text="{PRE_COL>INSURED_NAME}" wrapping="false" />
+						</template>
+					</Column>
+					<Column
+						
+						width="9rem"
+						filterProperty="HOLDER_MOBILE" 
+						sortProperty="HOLDER_MOBILE">
+						<m:Label text="{i18n>HOLDER_MOBILE}" />
+						<template>
+							<m:Text text="{PRE_COL>HOLDER_MOBILE}" wrapping="false" />
+						</template>
+					</Column>
+					<Column
+						
+						width="15rem"
+						filterProperty="HOLDER_ADDRESS" 
+						sortProperty="HOLDER_ADDRESS">
+						<m:Label text="{i18n>HOLDER_ADDRESS}" />
+						<template>
+							<m:Text text="{PRE_COL>HOLDER_ADDRESS}" wrapping="false" />
+						</template>
+					</Column>
+					<Column
+						
+						width="9rem"
+						filterProperty="HOLDER_EMAIL" 
+						sortProperty="HOLDER_EMAIL">
+						<m:Label text="{i18n>HOLDER_EMAIL}" />
+						<template>
+							<m:Text text="{PRE_COL>HOLDER_EMAIL}" wrapping="false" />
+						</template>
+					</Column>
+					
+					<Column
+						
+						width="9rem"
+						filterProperty="LONGTEXT" 
+						sortProperty="LONGTEXT">
+						<m:Label text="{i18n>LONGTEXT}" />
+						<template>
+							<m:Text text="{PRE_COL>LONGTEXT}" wrapping="false" />
+						</template>
+					</Column>
+					<Column
+						width="9rem"
+						filterProperty="PAYFRQ_CD" 
+						sortProperty="PAYFRQ_CD">
+						<m:Label text="{i18n>PAYFRQ_CD}" />
+						<template>
+							<m:Text text="{PRE_COL>PAYFRQ_CD}" wrapping="false" />
+						</template>
+					</Column>
+					<Column
+						id="categories"
+						width="11rem"
+						filterProperty="DUE_DATS" 
+						sortProperty="DUE_DATS">
+						<m:Label text="{i18n>DUE_DATS}" />
+						<template>
+							<m:Text text=" { path: 'PRE_COL>DUE_DATS', type: 'sap.ui.model.type.Date', formatOptions: { style: 'medium' } } " />
+						</template>
+					</Column>
+					<Column
+			
+						width="11rem"
+						filterProperty="FROM_DATE" 
+						sortProperty="FROM_DATE">
+						<m:Label text="{i18n>FROM_DATE}" />
+						<template>
+							<m:Text text=" { path: 'PRE_COL>FROM_DATE', type: 'sap.ui.model.type.Date', formatOptions: { style: 'medium' } } " />
+						</template>
+					</Column>
+					<Column
+					
+						width="11rem"
+						filterProperty="TO_DATE" 
+						sortProperty="TO_DATE">
+						<m:Label text="{i18n>TO_DATE}" />
+						<template>
+							<m:Text text=" { path: 'PRE_COL>TO_DATE', type: 'sap.ui.model.type.Date', formatOptions: { style: 'medium' } } " />
+						</template>
+					</Column>
+					<Column
+						
+						width="11rem"
+						filterProperty="GRACE_PERIOD" 
+						sortProperty="GRACE_PERIOD">
+						<m:Label text="{i18n>GRACE_PERIOD}" />
+						<template>
+							<m:Text text=" { path: 'PRE_COL>GRACE_PERIOD', type: 'sap.ui.model.type.Date', formatOptions: { style: 'medium' } } " />
+						</template>
+					</Column>
+					
+					<Column
+
+						width="9rem"
+						filterProperty="DUE_PRE" 
+						sortProperty="DUE_PRE">
+						<m:Label text="{i18n>DUE_PRE}" />
+						<template>
+							<m:Text text="{ parts:[{path: 'PRE_COL>DUE_PRE'},{path: 'PRE_COL>CURRENCY_ID'}] , formatter: '.formatter.currency'  } " wrapping="false" />
+							<!-- <u:Currency value="{PREMAFTERTAX_AM}" currency="{CURRENCY_ID}" useSymbol="false" /> -->
+							<!-- <ObjectListItem number="{ parts: [ {path:'PREMAFTERTAX_AM'}, {path:'CURRENCY_ID'}], type:'sap.ui.model.type.Currency', formatOptions:{ showMeasure: false} }" numberUnit="CURRENCY_ID"></ObjectListItem>  -->
+						</template>
+					</Column>
+					<Column
+						
+						width="12rem"
+						filterProperty="SUSPENSE" 
+						sortProperty="SUSPENSE">
+						<m:Label text="{i18n>SUSPENSE}" />
+						<template>
+							<m:Text text="{ parts:[{path: 'PRE_COL>SUSPENSE'},{path: 'PRE_COL>CURRENCY_ID'}] , formatter: '.formatter.currency'  } " wrapping="false" />
+							<!-- <u:Currency value="{PREMAFTERTAX_AM}" currency="{CURRENCY_ID}" useSymbol="false" /> -->
+							<!-- <ObjectListItem number="{ parts: [ {path:'PREMAFTERTAX_AM'}, {path:'CURRENCY_ID'}], type:'sap.ui.model.type.Currency', formatOptions:{ showMeasure: false} }" numberUnit="CURRENCY_ID"></ObjectListItem>  -->
+						</template>
+					</Column>
+					<Column
+						
+						width="11rem"
+						filterProperty="NET_PRE" 
+						sortProperty="NET_PRE">
+						<m:Label text="{i18n>NET_PRE}" />
+						<template>
+							<m:Text text="{ parts:[{path: 'PRE_COL>NET_PRE'},{path: 'PRE_COL>CURRENCY_ID'}] , formatter: '.formatter.currency'  } " wrapping="false" />
+							<!-- <u:Currency value="{PREMAFTERTAX_AM}" currency="{CURRENCY_ID}" useSymbol="false" /> -->
+							<!-- <ObjectListItem number="{ parts: [ {path:'PREMAFTERTAX_AM'}, {path:'CURRENCY_ID'}], type:'sap.ui.model.type.Currency', formatOptions:{ showMeasure: false} }" numberUnit="CURRENCY_ID"></ObjectListItem>  -->
+						</template>
+					</Column>
+					<Column
+						
+						width="13rem"
+						filterProperty="PAYMENT" 
+						sortProperty="PAYMENT"
+						filrerType="sap.ui.model.type.Boolean">
+						<m:Label text="{i18n>PAYMENT}" />
+						<template>
+							<m:CheckBox selected="{PRE_COL>PAYMENT}" enabled="false" />
+						</template>
+					</Column>
+					<Column
+						
+						width="13rem"
+						filterProperty="PAYMENT_DATE" 
+						sortProperty="PAYMENT_DATE">
+						<m:Label text="{i18n>PAYMENT_DATE}" />
+						<template>
+							<m:Label text="{ path: 'PRE_COL>PAYMENT_DATE', type: 'sap.ui.model.type.Date', formatOptions: { style: 'medium' } }" />
+						</template>
+					</Column>
+					<Column
+						
+						width="13rem"
+						filterProperty="PAYMENT_IC" 
+						sortProperty="PAYMENT_IC">
+						<m:Label text="{i18n>PAYMENT_IC}" />
+						<template>
+							<m:CheckBox selected="{PRE_COL>PAYMENT_IC}" enabled="false" />
+						</template>
+					</Column>
+					<Column
+						
+						width="13rem"
+						filterProperty="PAYMENT_DATE_IC" 
+						sortProperty="PAYMENT_DATE_IC">
+						<m:Label text="{i18n>PAYMENT_DATE_IC}" />
+						<template>
+							<m:Label text="{ path: 'PRE_COL>PAYMENT_DATE_IC', type: 'sap.ui.model.type.Date', formatOptions: { style: 'medium' } }" />
+						</template>
+					</Column>
+					
+					<Column
+						
+						width="13rem"
+						filterProperty="POLBEG_DT" 
+						sortProperty="POLBEG_DT">
+						<m:Label text="{i18n>POLBEG_DT}" />
+						<template>
+							<m:Label text="{ path: 'PRE_COL>POLBEG_DT', type: 'sap.ui.model.type.Date', formatOptions: { style: 'medium' } }" />
+						</template>
+					</Column>
+					<Column
+						
+						width="9rem"
+						filterProperty="PRE_TYPE" 
+						sortProperty="PRE_TYPE">
+						<m:Label text="{i18n>PRE_TYPE}" />
+						<template>
+							<m:Text text="{PRE_COL>PRE_TYPE}" wrapping="false" />
+						</template>
+					</Column>
+					
+				</columns>
+				<footer>
+					<!-- <m:Toolbar>
+						<m:ToolbarSpacer/>
+						<m:Button
+							icon="sap-icon://hint"
+							tooltip="Show information"
+							press="showInfo"/>
+					</m:Toolbar> -->
+				</footer>
+			</Table>
+			
+	
+</mvc:View>

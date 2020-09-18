@@ -1,0 +1,239 @@
+.sapMITBHorizontalWrapper {
+	    max-width: 20rem;
+	}
+.sapMITBHorizontal.sapMITBFilter > .sapMITBHorizontalWrapper > .sapMITBText {
+	max-width: 20rem;
+	}
+
+.textCounter, .textCounter1 {
+    font-size: 4em;
+    display: flow-root;
+}
+
+
+.sapMPI {
+    max-width: 75%;
+    margin-top: -1rem;
+    /*display: block;*/
+}
+
+.borderOne {
+    /*border: 1px solid grey;*/
+    /*box-shadow: 10px 10px 5px grey;*/
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 1rem;
+    /*text-align: left;*/
+    background-color: #dee2e8;
+}
+
+
+
+div.sapMPointer.sapSuiteILCNaLabel {
+    visibility: hidden;
+}
+
+div.sapMTileCntFooterTextColorNeutral.sapMTileCntFtrTxt {
+    /*font-size: x-large*/
+    font-size: 1.45rem;
+}
+
+span.textCounter {
+    margin-top: -50px;
+}
+
+.msgRMC {
+    top: -91px;
+    position: relative;
+    right: -504px;
+}
+
+.msgIBC {
+    margin-top: 2rem;
+}
+
+.msgPI {}
+
+.sapMPIText {
+    font-size: x-large;
+}
+
+.msgTopBar{
+	background-color: #ffffff;
+}
+
+/*.msgTopBar {*/
+
+
+/*   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+
+
+/*margin: 5px;*/
+
+
+/*    text-shadow: 2px 2px 4px #bfbfbf;*/
+
+
+/*}*/
+
+
+/*.msgMarginTop {*/
+
+
+/*    margin-top: 10px;*/
+
+
+/*    margin-left: 20px;*/
+
+
+/*}*/
+
+
+/*.msgBlockCellInline > .sapUiBlockCellContent > .sapUiBlockCellTitle {*/
+
+
+/*    display: inline-block;*/
+
+
+/*    margin-right: 10px;*/
+
+
+/*}*/
+
+
+/*.sapUiBlockCellTitle.sapUiBlockCellCenter.sapUiBlockCellTitleNoContent {*/
+
+
+/*    text-shadow: 2px 2px 4px #bfbfbf;*/
+
+
+/*}*/
+
+.msgTitle > .sapUiBlockCellContent > .sapUiBlockCellTitle {
+    font-size: xx-large;
+    font-weight: bold;
+    text-shadow: 4px 4px 8px #bfbfbf;
+}
+
+
+/*.msgTopBarTitle {*/
+
+
+/*    font-size: x-large;*/
+
+
+/*}*/
+
+div.sapSuiteIBCBarLabelText {
+    font-size: x-large;
+}
+
+.msgRefresh {
+    position: absolute;
+    top: 3rem;
+    right: 4rem;
+    background-color: rgba(0, 0, 0, 0.05);
+    color: #003770;
+    padding: 5px;
+    font-family: 'Source Sans Pro', sans-serif;
+    border-radius: 2px;
+    /* box-shadow: 5px 5px #CCC; */
+    font-size: x-large;
+}
+
+.msgLogo {
+    position: absolute;
+    top: 1.25rem;
+    left: 4rem;
+}
+
+.sapMPointer.sapSuiteILCTextElement.sapSuiteILCToplabel {
+    font-size: large;
+}
+
+.sapMPointer.sapSuiteILCBottomText.sapSuiteILCTextElement {
+    font-size: x-large;
+}
+
+/* span.sapSuiteIBCBarValue {
+    font-size: 2rem;
+} */
+
+.sapMShellBrandingBar {
+    visibility: collapse;
+}
+
+
+.msgTopLeft{
+    position: absolute;
+    top: calc( 50% - 10rem);
+    left: 1rem;	
+}
+
+.msgTopRight{
+    position: absolute;
+    top: calc( 50% - 10rem);
+    right: 1rem;	
+}
+
+/*code sửa màu text số ,cỡ chữ */
+
+/* .msgColor,
+.sapMNCValueScr,
+.textCounter,
+.msgTopBarTitle,
+.sapUiBlockCellTitle,
+.sapMText,
+.sapMTileCntFtrTxt,
+.sapSuiteIBCBarLabelText {
+    color: #003770;
+    font-color: #003770;
+} */
+/* .sapMNCValueScr {
+    font-size: larger;
+} */
+
+html {
+  /*overflow-x: scroll;*/
+  /*overflow-y: scroll;*/
+}
+
+span.textCounter1 > bdi {
+	font-color: #003770;
+}
+
+
+:-webkit-full-screen body,
+:-moz-full-screen body,
+:-ms-fullscreen body {
+	/* properties */
+	width: 100vw;
+	height: 100vh;
+}
+
+:full-screen body {
+	/*pre-spec */
+	/* properties */
+	width: 100vw;
+	height: 100vh;
+}
+
+:fullscreen body {
+	/* spec */
+	/* properties */
+	width: 100vw;
+	height: 100vh;
+}
+
+/* deeper elements */
+
+:-webkit-full-screen body {
+	width: 100vw;
+	height: 100vh;
+}
+
+/* styling the backdrop*/
+
+::backdrop,
+::-ms-backdrop {
+	/* Custom styles */
+}

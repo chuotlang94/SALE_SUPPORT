@@ -1,0 +1,285 @@
+<mvc:View
+	controllerName="ZFR_BANCA_TOOL.Controller.MainTotalPolicy"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:l="sap.ui.layout"
+	xmlns="sap.ui.table"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:u="sap.ui.unified"
+	xmlns:c="sap.ui.core"
+	xmlns:m="sap.m"
+	xmlns:f="sap.ui.layout.form" >
+	
+	<m:Page
+		showHeader="true"
+		enableScrolling="false"
+		navButtonPress="onNavBack"
+		title="{i18n>TOTALPOLICY}"
+		showNavButton="true"
+		>
+		<!-- <l:BlockLayout id="BlockLayout" background="Dashboard">
+			<l:BlockLayoutRow visible="true" class="msgTopBar">
+				<l:BlockLayoutCell title="{i18n>appTitle}"
+					titleAlignment="Center" class="msgTitle">
+					<m:Image src="https://i.imgur.com/7EAusPH.png"
+						densityAware="false">
+						<m:layoutData>
+							<m:FlexItemData growFactor="1" />
+						</m:layoutData>
+					</m:Image>
+				</l:BlockLayoutCell>
+			</l:BlockLayoutRow>
+
+		</l:BlockLayout> -->
+			<Table
+				id="table"
+				selectionMode="MultiToggle"
+				fixedColumnCount = "2"
+				enableCellFilter="true"
+				rows="{path: 'ZGW_BANCA_TOOL>/TOTAL_POLICYSet', parameters: {operationMode: 'Client'}}"
+				visibleRowCountMode = "Auto"
+				ariaLabelledBy="title"
+				cellClick="onCell">
+				
+				<columns>
+					<Column
+						id="name"
+						width="11rem"
+						filterProperty="POLICY_NUM" 
+						sortProperty="POLICY_NUM">
+						<m:Label text="{i18n>POLICY_NUM}" />
+						<template>
+							<m:Text text="{ZGW_BANCA_TOOL>POLICY_NUM}" wrapping="false" />
+						</template>
+					</Column>
+					<Column
+						
+						width="9rem"
+						filterProperty="HOLDER_NAME" 
+						sortProperty="HOLDER_NAME">
+						<m:Label text="{i18n>HOLDER_NAME}" />
+						<template>
+							<m:Text text="{ZGW_BANCA_TOOL>HOLDER_NAME}" wrapping="false" />
+						</template>
+					</Column>
+					<Column
+						
+						width="9rem"
+						filterProperty="HOLDER_BIRTHDT" 
+						sortProperty="HOLDER_BIRTHDT">
+						<m:Label text="{i18n>HOLDER_BIRTHDT}" />
+						<template>
+							<m:Label text="{ path: 'ZGW_BANCA_TOOL>HOLDER_BIRTHDT', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd.MM.yyyy' } }" />
+						</template>
+					</Column>
+					<Column
+						
+						width="9rem"
+						filterProperty="HOLDER_MOBILE" 
+						sortProperty="HOLDER_MOBILE">
+						<m:Label text="{i18n>HOLDER_MOBILE}" />
+						<template>
+							<m:Text text="{ZGW_BANCA_TOOL>HOLDER_MOBILE}" wrapping="false" />
+						</template>
+					</Column>
+					
+					<Column
+						
+						width="9rem"
+						filterProperty="LONGTEXT" 
+						sortProperty="LONGTEXT">
+						<m:Label text="{i18n>LONGTEXT}" />
+						<template>
+							<m:Text text="{ZGW_BANCA_TOOL>LONGTEXT}" wrapping="false" />
+						</template>
+					</Column>
+<!-- 					<Column
+						
+						width="9rem"
+						filterProperty="RIDERTEXT" 
+						sortProperty="RIDERTEXT">
+						<m:Label text="{i18n>RIDERTEXT}" />
+						<template>
+							<m:Text text="{RIDERTEXT}" wrapping="false" />
+						</template>
+					</Column> -->
+					
+					<Column
+						
+						width="9rem"
+						filterProperty="HOLDER_EMAIL" 
+						sortProperty="HOLDER_EMAIL">
+						<m:Label text="{i18n>HOLDER_EMAIL}" />
+						<template>
+							<m:Text text="{ZGW_BANCA_TOOL>HOLDER_EMAIL}" wrapping="false" />
+						</template>
+					</Column>
+					
+					<Column
+						
+						width="15rem"
+						filterProperty="HOLDER_ADDRESS" 
+						sortProperty="HOLDER_ADDRESS">
+						<m:Label text="{i18n>HOLDER_ADDRESS}" />
+						<template>
+							<m:Text text="{ZGW_BANCA_TOOL>HOLDER_ADDRESS}" wrapping="false" />
+						</template>
+					</Column>
+					<Column
+						id="categories"
+						width="9rem"
+						filterProperty="RELEASED_DATE" 
+						sortProperty="RELEASED_DATE">
+						<m:Label text="{i18n>RELEASED_DATE}" />
+						<template>
+							<m:Text text=" { path: 'ZGW_BANCA_TOOL>RELEASED_DATE', type: 'sap.ui.model.type.Date', formatOptions: { style: 'medium' } } " />
+						</template>
+					</Column>
+					<Column width="10rem"
+						filterProperty="APPLIN_DT" 
+						sortProperty="APPLIN_DT">
+						<m:Label text="{i18n>APPLIN_DT}" />
+						<template>
+						<m:Text text="{ path: 'ZGW_BANCA_TOOL>APPLIN_DT', type: 'sap.ui.model.type.Date', formatOptions: { style: 'medium' } }" wrapping="false" />
+					
+						</template>
+					</Column>
+					<Column
+						width="10rem"
+						hAlign="End"
+						filterProperty="APPL_DT" 
+						sortProperty="APPL_DT">
+						<m:Label text="{i18n>APPL_DT}" />
+						<template>
+							<m:Label text="{ path: 'ZGW_BANCA_TOOL>APPL_DT', type: 'sap.ui.model.type.Date', formatOptions: { style: 'medium' } }" />
+						</template>
+					</Column>
+					<Column
+						
+						width="8rem"
+						filterProperty="ZZACK_DT" 
+						sortProperty="ZZACK_DT">
+						<m:Label text="{i18n>ZZACK_DT}" />
+						<template>
+							<m:Text text="{ path: 'ZGW_BANCA_TOOL>ZZACK_DT', type: 'sap.ui.model.type.Date', formatOptions: { style: 'medium' } }" wrapping="false" />
+						</template>
+					</Column>
+					<Column
+						
+						width="9rem"
+						filterProperty="STATUS" 
+						sortProperty="STATUS">
+						<m:Label text="{i18n>STATUS}" />
+						<template>
+							<m:Text text="{ZGW_BANCA_TOOL>STATUS}" wrapping="false" />
+						</template>
+					</Column>
+					<Column
+						
+						width="11rem"
+						filterProperty="POLBEG_DT" 
+						sortProperty="POLBEG_DT">
+						<m:Label text="{i18n>POLBEG_DT}" />
+						<template>
+							<m:Label text="{ path: 'ZGW_BANCA_TOOL>POLBEG_DT', type: 'sap.ui.model.type.Date', formatOptions: { style: 'medium' } }" />
+						</template>
+					</Column>
+					
+					
+					<Column
+						
+						width="11rem"
+						filterProperty="INSURED_NAME" 
+						sortProperty="INSURED_NAME">
+						<m:Label text="{i18n>INSURED_NAME}" />
+						<template>
+							<m:Text text="{ZGW_BANCA_TOOL>INSURED_NAME}" wrapping="false" />
+						</template>
+					</Column>
+					<Column
+						
+						width="11rem"
+						filterProperty="INSURED_BIRTHDT" 
+						sortProperty="INSURED_BIRTHDT">
+						<m:Label text="{i18n>INSURED_BIRTHDT}" />
+						<template>
+							<m:Text text="{ path: 'ZGW_BANCA_TOOL>INSURED_BIRTHDT', type: 'sap.ui.model.type.Date', formatOptions: { pattern: 'dd.MM.yyyy' } }" wrapping="false" />
+						</template>
+					</Column>
+					<Column
+						
+						width="9rem"
+						filterProperty="INSURED_SEX" 
+						sortProperty="INSURED_SEX">
+						<m:Label text="{i18n>INSURED_SEX}" />
+						<template>
+							<m:Text text="{ZGW_BANCA_TOOL>INSURED_SEX}" wrapping="false" />
+						</template>
+					</Column>
+					<Column
+						
+						width="9rem"
+						filterProperty="INSAMOUNTABS_AM" 
+						sortProperty="INSAMOUNTABS_AM">
+						<m:Label text="{i18n>INSAMOUNTABS_AM}" />
+						<template>
+							<m:Text text="{ parts:[{path: 'ZGW_BANCA_TOOL>INSAMOUNTABS_AM'},{path: 'ZGW_BANCA_TOOL>CURRENCY_ID'}] , formatter: '.formatter.currency'  } " wrapping="false" />
+							<!-- <m:Text text="{INSAMOUNTABS_AM}" wrapping="false" /> -->
+							<!-- <m:Text text="{path:'INSAMOUNTABS_AM',type:'sap.ui.model.type.Float'}" wrapping="false" /> -->
+						</template>
+					</Column>
+					<Column
+						
+						width="9rem"
+						filterProperty="PAYFRQ_CD" 
+						sortProperty="PAYFRQ_CD">
+						<m:Label text="{i18n>PAYFRQ_CD}" />
+						<template>
+							<m:Text text="{ZGW_BANCA_TOOL>PAYFRQ_CD}" wrapping="false" />
+						</template>
+					</Column>
+					<Column
+						
+						width="9rem"
+						filterProperty="ZZ_POL_TERM" 
+						sortProperty="ZZ_POL_TERM">
+						<m:Label text="{i18n>ZZ_POL_TERM}" />
+						<template>
+							<m:Text text="{ZGW_BANCA_TOOL>ZZ_POL_TERM}" wrapping="false" />
+						</template>
+					</Column>
+					<Column
+						
+						width="9rem"
+						filterProperty="ZZ_PRE_TERM" 
+						sortProperty="ZZ_PRE_TERM">
+						<m:Label text="{i18n>ZZ_PRE_TERM}" />
+						<template>
+							<m:Text text="{ZGW_BANCA_TOOL>ZZ_PRE_TERM}" wrapping="false" />
+						</template>
+					</Column>
+					<Column
+
+						width="9rem"
+						filterProperty="APE" 
+						sortProperty="APE">
+						<m:Label text="{i18n>PREMAFTERTAX_AM}" />
+						<template>
+							<m:Text text="{ parts:[{path: 'ZGW_BANCA_TOOL>APE'},{path: 'ZGW_BANCA_TOOL>CURRENCY_ID'}] , formatter: '.formatter.currency'  } " wrapping="false" />
+							<!-- <u:Currency value="{PREMAFTERTAX_AM}" currency="{CURRENCY_ID}" useSymbol="false" /> -->
+							<!-- <ObjectListItem number="{ parts: [ {path:'PREMAFTERTAX_AM'}, {path:'CURRENCY_ID'}], type:'sap.ui.model.type.Currency', formatOptions:{ showMeasure: false} }" numberUnit="CURRENCY_ID"></ObjectListItem>  -->
+						</template>
+					</Column>
+					
+				</columns>
+				<footer>
+					<!-- <m:Toolbar>
+						<m:ToolbarSpacer/>
+						<m:Button
+							icon="sap-icon://hint"
+							tooltip="Show information"
+							press="showInfo"/>
+					</m:Toolbar> -->
+				</footer>
+			</Table>
+	</m:Page>
+	
+</mvc:View>

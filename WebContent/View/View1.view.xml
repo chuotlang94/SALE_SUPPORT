@@ -1,0 +1,156 @@
+<mvc:View controllerName="ZFR_BANCA_TOOL.Controller.View1"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:m="sap.m"
+	xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout"
+	xmlns:l="sap.ui.layout" appWidthLimited="false" width="100%">
+	<!--<m:FlexBox width="100%" justifyContent="Center" class="msgTopBar"> -->
+	<!-- <m:Title level="H1" text="{i18n>appTitle}" textAlign="Center" class="msgTopBarTitle"/> -->
+	<!--</m:FlexBox> -->
+	<!--<m:FlexBox width="100%"> -->
+	<!--<m:ScrollContainer -->
+	<!-- height="150%" -->
+	<!-- width="150%" -->
+	<!-- vertical="true" -->
+	<!-- focusable="true"> -->
+	<m:Page showHeader="false">
+		<l:BlockLayout id="BlockLayout" background="Dashboard">
+			<l:BlockLayoutRow visible="true" class="msgTopBar">
+				<l:BlockLayoutCell title="{i18n>appTitle}"
+					titleAlignment="Center" class="msgTitle">
+					<m:Image src="https://i.imgur.com/7EAusPH.png"
+						densityAware="false">
+						<m:layoutData>
+							<m:FlexItemData growFactor="1" />
+						</m:layoutData>
+					</m:Image>
+				</l:BlockLayoutCell>
+			</l:BlockLayoutRow>
+
+		</l:BlockLayout>
+
+		<l:BlockLayout>
+			<l:BlockLayoutRow accentCells="Accent1">
+				<l:BlockLayoutCell>
+					<!--<m:Text text="this month per Product Category"/> -->
+
+					<m:FlexBox alignItems="Center" justifyContent="Center">
+						<m:items>
+							<l:HorizontalLayout allowWrapping="false">
+								<l:VerticalLayout width="100%">
+									<m:GenericTile class="sapUiTinyMargin tileLayout"
+										frameType="TwoByOne" header="{i18n>TOTALPOLICY}" subheader=""
+										press="onTotalPolicy">
+										<m:tileContent>
+											<m:TileContent>
+												<m:content>
+													<m:NumericContent
+														value="{/TotalPolicyCount}" 
+														
+														withMargin="true" width="100%" truncateValueTo="20" />
+
+												</m:content>
+											</m:TileContent>
+										</m:tileContent>
+
+									</m:GenericTile>
+									<m:GenericTile class="sapUiTinyMargin tileLayout"
+										frameType="TwoByOne"
+										header="{i18n>MAINPOLICYINPROCESS}" subheader=""
+										press="onPolicyInprocess">
+										<m:tileContent>
+											<m:TileContent unit=""
+												footer="{i18n>COMINGSOON}">
+												<m:content>
+													<m:NumericContent
+														value="{/PolicyInprocessCount}"
+														
+														withMargin="true" width="100%" truncateValueTo="20" />
+												</m:content>
+											</m:TileContent>
+										</m:tileContent>
+
+									</m:GenericTile>
+									<m:GenericTile class="sapUiTinyMargin tileLayout"
+										frameType="TwoByOne"
+										header="{i18n>YEARLYCHECKUP}" subheader=""
+										press="press">
+										<m:tileContent>
+											<m:TileContent unit=""
+												footer="{i18n>COMINGSOON}">
+												<m:content>
+													<m:NumericContent
+														value="" 
+														
+														withMargin="true" width="100%" truncateValueTo="20" />
+												</m:content>
+											</m:TileContent>
+										</m:tileContent>
+
+									</m:GenericTile>
+									
+								</l:VerticalLayout>
+							</l:HorizontalLayout>
+
+						</m:items>
+					</m:FlexBox>
+				</l:BlockLayoutCell>
+				<l:BlockLayoutCell>
+					<!--<m:Text text="this month per Product Category"/> -->
+
+				</l:BlockLayoutCell>
+				<l:BlockLayoutCell>
+					<!--<m:Text text="this month per Product Category"/> -->
+
+					<m:FlexBox alignItems="Center" justifyContent="Center">
+						<m:items>
+							<l:HorizontalLayout allowWrapping="false">
+								<l:VerticalLayout width="100%">
+									<m:GenericTile class="sapUiTinyMargin tileLayout"
+										frameType="TwoByOne"
+										header="{i18n>PRECOL}"
+										subheader="{i18n>PRECOLSUBHEADER}" press="onPreCol">
+										<m:tileContent>
+											<m:TileContent unit=""
+												footer="">
+												<m:content>
+													<m:NumericContent
+														value="{/PremiumCollectionCount} / {/PremiumCollectionOverCount}" 
+														
+														withMargin="true" width="100%" truncateValueTo="20" />
+												</m:content>
+											</m:TileContent>
+										</m:tileContent>
+
+									</m:GenericTile>
+									<m:GenericTile class="sapUiTinyMargin tileLayout"
+										frameType="TwoByOne"
+										header="{i18n>CUSTOMERCARE}"
+										subheader="" id="fullScreenButton" press="_toggleFullScreen">
+										<m:tileContent>
+											<m:TileContent unit=""
+												footer="{i18n>COMINGSOON}">
+												<m:content>
+													<m:NumericContent
+														value="" 
+														
+														withMargin="true" width="100%" truncateValueTo="20" />
+												</m:content>
+											</m:TileContent>
+										</m:tileContent>
+
+									</m:GenericTile>
+								</l:VerticalLayout>
+							</l:HorizontalLayout>
+
+						</m:items>
+					</m:FlexBox>
+				</l:BlockLayoutCell>
+
+			</l:BlockLayoutRow>
+		</l:BlockLayout>
+
+		<!--</m:ScrollContainer> -->
+		<!--</m:FlexBox> -->
+		<!--<m:Text text="Loading..." class="msgRefresh"/> -->
+
+	</m:Page>
+</mvc:View>

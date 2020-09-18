@@ -1,0 +1,111 @@
+
+
+<core:FragmentDefinition xmlns="sap.m" xmlns:ui="sap.ui.commons"
+	xmlns:core="sap.ui.core" xmlns:year="sap.ui.unified.calendar" xmlns:f="sap.ui.layout.form"
+	xmlns:l="sap.ui.layout">
+
+	<Dialog title="{i18n>DETAILPRECOL} {POLICY_NUM}" id="EditPreCol">
+		<IconTabBar class="sapUiResponsiveContentPadding">
+			<items>
+				<IconTabFilter text="General data">
+					
+					<f:SimpleForm 
+			editable="false"
+			layout="ResponsiveGridLayout"
+			labelSpanXL="12"
+			labelSpanL="12"
+			labelSpanM="12"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="0"
+			emptySpanL="4"
+			emptySpanM="0"
+			emptySpanS="0"
+			columnsXL="2"
+			columnsL="1"
+			columnsM="1"
+			singleContainerFullSize="false" >
+			<f:content>
+			
+					
+					<Label text="{i18n>POLICY_NUM}" required = "true" />
+					<Input value="{PRE_COL>POLICY_NUM}" visible="true" maxLength="17" type="Number" enabled="false"/>
+												
+											
+
+
+					<Label text="{i18n>HOLDER_NAME}" />
+					<Input  maxLength="50" value="{PRE_COL>HOLDER_NAME}" enabled="false" />
+
+
+					<Label text="{i18n>INSURED_NAME}" required = "true" />
+					<Input maxLength="50"  showValueHelp="true" enabled="false" valueHelpRequest="onyear" liveChange="onTest" value="{PRE_COL>INSURED_NAME}"/>
+
+					<Label text="{i18n>INSURED_NAME}" required = "true" />
+					<Input maxLength="50"  showValueHelp="true" enabled="false" valueHelpRequest="onyear" liveChange="onTest" value="{PRE_COL>INSURED_NAME}"/>
+					
+					<Label text="{i18n>INSURED_NAME}" required = "true" />
+					<Input maxLength="50"  showValueHelp="true" enabled="false" valueHelpRequest="onyear" liveChange="onTest" value="{PRE_COL>INSURED_NAME}"/>
+					
+					<Label text="{i18n>INSURED_NAME}" required = "true" />
+					<Input maxLength="50"  showValueHelp="true" enabled="false" valueHelpRequest="onyear" liveChange="onTest" value="{PRE_COL>INSURED_NAME}"/>
+					
+					<Label text="{i18n>INSURED_NAME}" required = "true" />
+					<Input maxLength="50"  showValueHelp="true" enabled="false" valueHelpRequest="onyear" liveChange="onTest" value="{PRE_COL>INSURED_NAME}"/>
+					
+					<Label text="{i18n>INSURED_NAME}" required = "true" />
+					<Input maxLength="50"  showValueHelp="true" enabled="false" valueHelpRequest="onyear" liveChange="onTest" value="{PRE_COL>INSURED_NAME}"/>
+					
+					
+					<Label text="{i18n>INSURED_NAME}" required = "true" />
+					<Input maxLength="50"  showValueHelp="true" enabled="false" valueHelpRequest="onyear" liveChange="onTest" value="{PRE_COL>INSURED_NAME}"/>
+					
+					<Label text="{i18n>INSURED_NAME}" required = "true" />
+					<Input maxLength="50"  showValueHelp="true" enabled="false" valueHelpRequest="onyear" liveChange="onTest" value="{PRE_COL>INSURED_NAME}"/>
+					
+					<Label text="{i18n>INSURED_NAME}" required = "true" />
+					<Input maxLength="50"  showValueHelp="true" enabled="false" valueHelpRequest="onyear" liveChange="onTest" value="{PRE_COL>INSURED_NAME}"/>
+					
+					<Label text="{i18n>INSURED_NAME}" required = "true" />
+					<Input maxLength="50"  showValueHelp="true" enabled="false" valueHelpRequest="onyear" liveChange="onTest" value="{PRE_COL>INSURED_NAME}"/>
+					
+					<Label text="{i18n>INSURED_NAME}" required = "true" />
+					<Input maxLength="50"  showValueHelp="true" enabled="false" valueHelpRequest="onyear" liveChange="onTest" value="{PRE_COL>INSURED_NAME}"/>
+					
+					<Label text="{i18n>INSURED_NAME}" required = "true" />
+					<Input maxLength="50"  showValueHelp="true" enabled="false" valueHelpRequest="onyear" liveChange="onTest" value="{PRE_COL>INSURED_NAME}"/>
+					
+					<Label text="{i18n>INSURED_NAME}" required = "true" />
+					<Input maxLength="50"  showValueHelp="true" enabled="false" valueHelpRequest="onyear" liveChange="onTest" value="{PRE_COL>INSURED_NAME}"/>
+
+					<Label text="{i18n>PAYMENT_DATE_IC}" />
+					<DatePicker id="PAYMENT_DATE_IC" value="{ path: 'PRE_COL>PAYMENT_DATE_IC', type: 'sap.ui.model.type.Date', formatOptions: { style: 'medium' } }" >
+												<layoutData>
+													<l:GridData span="XL7 L7 M7 S7" />
+												</layoutData>
+											</DatePicker>
+											<CheckBox id="PAYMENT_IC" text="{i18n>PAYMENT_IC}" 
+												valueState="Warning" selected="{PRE_COL>PAYMENT_IC}" select="checkDone">
+												<layoutData>
+													<l:GridData span="XL5 L5 M5 S5" />
+												</layoutData>
+											</CheckBox>
+
+				
+			
+						</f:content>
+		</f:SimpleForm>
+
+				</IconTabFilter>
+
+			</items>
+		</IconTabBar>
+		<buttons>
+			<Button text="{i18n>SAVE}" press="onUpdate" />
+			<Button text="{i18n>CANCEL}" press="onClose" />
+		</buttons>
+
+	</Dialog>
+
+
+</core:FragmentDefinition>

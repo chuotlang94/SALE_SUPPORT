@@ -1,0 +1,34 @@
+<edmx:Edmx
+    xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+    xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+    xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema
+            xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ZPOLICYOFAM_ODATA_SRV" xml:lang="en" sap:schema-version="1">
+            <EntityType Name="PolicyOfAM" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="SecpolId"/>
+                </Key>
+                <Property Name="SecpolId" Type="Edm.String" Nullable="false" MaxLength="22" sap:label="Policy Key"/>
+                <Property Name="PagnoId" Type="Edm.String" MaxLength="20" sap:label="Ext. Appl.No."/>
+                <Property Name="PolicyHolder" Type="Edm.String" MaxLength="80" sap:label="Full Name"/>
+                <Property Name="PolicyDob" Type="Edm.DateTime" Precision="7" sap:label="Date of Birth"/>
+                <Property Name="TelnrLong" Type="Edm.String" MaxLength="30" sap:label="Telephone no."/>
+                <Property Name="SmtpAddr" Type="Edm.String" MaxLength="241" sap:label="E-Mail Address"/>
+                <Property Name="Address" Type="Edm.String" MaxLength="120" sap:label="char120"/>
+                <Property Name="ProductTt" Type="Edm.String" MaxLength="50" sap:label="Product Name"/>
+                <Property Name="InsuredName" Type="Edm.String" MaxLength="80" sap:label="Full Name"/>
+                <Property Name="InsuredDob" Type="Edm.DateTime" Precision="7" sap:label="Date of Birth"/>
+                <Property Name="InsuredGender" Type="Edm.Boolean" sap:label="Male"/>
+                <Property Name="PayintTt" Type="Edm.String" MaxLength="50" sap:label="Paymnt Freq.Name"/>
+            </EntityType>
+            <EntityContainer Name="ZPOLICYOFAM_ODATA_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="PolicyOfAMSet" EntityType="ZPOLICYOFAM_ODATA_SRV.PolicyOfAM" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+            </EntityContainer>
+            <atom:link
+                xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="./sap/ZPOLICYOFAM_ODATA_SRV/$metadata"/>
+                <atom:link
+                    xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="./sap/ZPOLICYOFAM_ODATA_SRV/$metadata"/>
+                </Schema>
+            </edmx:DataServices>
+        </edmx:Edmx>

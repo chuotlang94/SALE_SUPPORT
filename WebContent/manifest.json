@@ -1,0 +1,293 @@
+{
+	"_version": "1.1.0",
+	"config": {
+        "fullWidth": true,
+        "resourceBundle": "i18n/i18n.properties",
+        "serviceConfig": {
+          "name": "",
+          "serviceUrl": "/ipw/quo/odata.svc/",
+          "isDefault": true,
+          "noBusyIndicator": true,
+          "mockedDataSource": "/ZFR_BANCA_TOOL/model/metadata.xml"
+        }
+      },
+	"sap.app": {
+		"_version": "1.1.0",
+		"id": "ZFR_BANCA_TOOL",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"dataSources": {
+			"mainService": {
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/metadata.xml",
+					"annotations": []
+				},
+				"uri": "localService/metadata.xml"
+			},
+			 "PolicyAm": {
+                "uri": "/sap/opu/odata/sap/ZPOLICYOFAM_ODATA_SRV/",
+                "type": "OData",
+                "settings": {
+                    "odataVersion": "2.0",
+                    "localUri": "localService/metadata.xml"
+                }
+            },
+			"services.xsodata": {
+				"uri": "http://sesrv001.semazi.vn/sap/opu/odata/SAP/ZSODATA_SRV/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "http://sesrv001.semazi.vn/sap/opu/odata/SAP/ZSODATA_SRV/$metadata"
+				}
+			},
+			"ZGW_BANCA_TOOL_SRV1": {
+                "uri": "/sap/opu/odata/sap/ZGW_BANCA_TOOL_SRV/",
+                "type": "OData",
+                "settings": {
+                    "odataVersion": "2.0",
+                    "localUri": "localService/metadata.xml"
+                }
+            },
+			"ZGW_BANCA_TOOL_SRV": {
+                "uri": "/sap/opu/odata/sap/ZGW_BANCA_TOOL_SRV/",
+                "type": "OData",
+                "settings": {
+                    "odataVersion": "2.0",
+                    "localUri": "localService/metadata.xml"
+                }
+            }
+		}
+	},
+	"sap.ui": {
+		"_version": "1.1.0",
+		"technology": "UI5",
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"fullWidth" : true,
+		"supportedThemes": [
+			"sap_bluecrystal"
+		]
+	},
+	"sap.ui5": {
+		"_version": "1.1.0",
+		"rootView": {
+			"viewName": "ZFR_BANCA_TOOL.View.App",
+			"type": "XML"
+		},
+		"dependencies": {
+			"minUI5Version": "1.30",
+			"libs": {
+				"sap.ui.core": {},
+                "sap.m": {},
+                "sap.ui.layout": {},
+                "sap.ushell": {},
+                "sap.collaboration": {},
+                "sap.ui.comp": {},
+                "sap.uxap": {}
+			}
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "ZFR_BANCA_TOOL.i18n.i18n"
+				}
+			},
+			"": {
+                "type": "sap.ui.model.json.JSONModel",
+                "settings": {},
+                "preload": false
+            },
+            "PolicyAm":{
+                "dataSource": "PolicyAm",
+                "preload": true,
+                "settings": {
+                    "defaultBindingMode": "TwoWay",
+                    "defaultCountMode": "Both",
+                    "defaultOperationMode": "Server"
+                }
+            },
+            "ZGW_BANCA_TOOL":{
+                "dataSource": "ZGW_BANCA_TOOL_SRV",
+                "preload": true,
+                "settings": {
+                    "defaultBindingMode": "OneWay",
+                    "defaultCountMode": "Both",
+                    "defaultOperationMode": "Server"
+                }
+            },
+            "ZGW_BANCA_TOOL1":{
+            	"type": "sap.ui.model.odata.v2.ODataModel",
+                "dataSource": "ZGW_BANCA_TOOL_SRV1",
+                "preload": true,
+                "settings": {
+                    "defaultOperationMode": "Server",
+                    "defaultBindingMode": "OneWay",
+                    "defaultCountMode": "Both"
+                }
+            },
+            "PRE_COL":{
+            	"type": "sap.ui.model.odata.v2.ODataModel",
+                "dataSource": "ZGW_BANCA_TOOL_SRV1",
+                "preload": true,
+                "settings": {
+                    "defaultOperationMode": "Server",
+                    "defaultBindingMode": "TwoWay",
+                    "defaultCountMode": "Both"
+                }
+            },
+			"data": {
+				"dataSource": "services.xsodata",
+				"settings": {
+					"defaultBindingMode": "OneWay"
+				}
+			}
+		},
+		"resources": {
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
+		},
+		"routing": {
+			"config": {
+				"viewType": "XML",
+				"viewPath": "ZFR_BANCA_TOOL.View",
+				"controlId": "app",
+				"routerClass": "sap.m.routing.Router",
+				"controlAggregation": "pages"
+			},
+			"routes": [{
+				"pattern": "",
+				"name": "overview",
+				"target": "overview",
+				"targetControl":"app"
+				
+			}, {
+				"name": "MainTotalPolicy",
+				"pattern": "MainTotalPolicy",
+				"target": "MainTotalPolicy"
+			},{
+				"name": "DetailTotalPolicy",
+				"pattern": "DetailTotalPolicy({policy_num})",
+				"target": "DetailTotalPolicy"
+			},
+			 {
+				"name": "MainPremiumCollection",
+				"pattern": "MainPremiumCollection",
+				"target": "MainPremiumCollection"
+			},
+			{
+				"name": "MainPolicyInprocess",
+				"pattern": "MainPolicyInprocess",
+				"target": "MainPolicyInprocess"
+			},
+			{
+                    "pattern": "detailmsg",
+                    "name": "detailmsg",
+                    "target": "detailmsg"
+                },
+			 {
+				"name": "Newview",
+				"pattern": "Newview/{userpath}",
+				"target": "Newview"
+			}, {
+				"name": "PolicyIssued",
+				"pattern": "PolicyIssued",
+				"target": [
+						"Master"
+					],
+				"controlId": "PolicyIssued"
+				
+			},
+			{
+				"pattern": "PolicyIssued/{date}",
+				"name": "MasterPage",
+				"targetControl":"PolicyIssued",
+		
+				"target": [
+						"Master","Detail"
+					]
+			},
+			{
+				"pattern": "PolicyIssued/{date}/{number}",
+				"name": "DetailPage",
+				"targetControl":"PolicyIssued",
+		
+				"target": [
+						"Master","Detail"
+					]
+			}
+			
+			],
+			"targets": {
+				"overview": {
+					"viewName": "View1",
+					"viewType": "XML",
+					"viewLevel" : 1
+				},
+				"MainTotalPolicy": {
+					"viewName": "MainTotalPolicy",
+					"viewType": "XML"
+				},
+				"DetailTotalPolicy": {
+					"viewName": "DetailTotalPolicy",
+					"viewType": "XML"
+				},
+				"MainPremiumCollection": {
+					"viewName": "MainPremiumCollection",
+					"viewType": "XML"
+				},
+				"MainPolicyInprocess": {
+					"viewName": "MainPolicyInprocess",
+					"viewType": "XML"
+				},
+				"detailmsg": {
+                    "viewName": "Second",
+                    "viewType": "XML",
+                    "viewId": "detailmsg"
+                },
+				"Newview": {
+					"viewName": "Newview",
+					"viewType": "XML",
+					"viewLevel" : 2
+				},
+				"PolicyIssued": {
+					"viewName": "PolicyIssued",
+					"viewType": "JS",
+					"viewLevel" : 2
+				},
+				"Master": {
+					"viewName": "MasterPage",
+					"viewLevel": 3,
+					"viewId": "master",
+					"viewType": "XML",
+					"controlId": "PolicyIssued",
+					"parent": "PolicyIssued",
+					"controlAggregation": "masterPages"
+				}
+				,
+				"Detail": {
+					"viewName": "DetailPage",
+					"viewLevel": 3,
+					"viewId": "detail",
+					"viewType": "XML",
+					"controlId": "PolicyIssued",
+					"parent": "PolicyIssued",
+					"controlAggregation": "detailPages"
+				}
+			}
+		}
+	}
+}
